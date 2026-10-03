@@ -12,32 +12,113 @@
     <div id="game" aria-label="Bounty Hunters"></div>
 
     <section id="lobby" class="overlay">
-      <div class="panel">
-        <img src="././logo.jpg" class="logo" alt="Logo Bounty Hunters" />
-        <p class="eyebrow">MULTIPLAYER · 2 CAÇADORES</p>
-        <h1>BOUNTY HUNTERS</h1>
-        <p class="sub">Pegue contratos, cace alvos e capture-os com seu parceiro.</p>
-
-        <label>SEU NOME
-          <input id="name" maxlength="18" placeholder="Caçador" autocomplete="off" />
-        </label>
-
-        <div class="actions">
-          <button id="create" type="button">CRIAR SALA</button>
-
-          <div class="join-row">
-            <input id="code" maxlength="5" placeholder="CÓDIGO" autocomplete="off" aria-label="Código da sala" />
-            <button id="join" type="button">ENTRAR</button>
+      <div class="panel panel-wide">
+        <div class="brand-row">
+          <img src="./logo.jpg" class="logo" alt="Logo Bounty Hunters" />
+          <div>
+            <p class="eyebrow">MULTIPLAYER · 2 CAÇADORES</p>
+            <h1>BOUNTY HUNTERS</h1>
+            <p class="sub">Caçadas, contratos, armas, upgrades e personagens personalizados.</p>
           </div>
-
-          <button id="solo" class="secondary" type="button">TREINAR SOZINHO</button>
         </div>
 
-        <p id="lobby-msg" class="msg">Crie uma sala e envie o código para seu amigo.</p>
+        <div class="lobby-grid">
+          <div class="column">
+            <label>SEU NOME
+              <input id="name" maxlength="18" placeholder="Caçador" autocomplete="off" />
+            </label>
 
-        <div class="status-row">
-          <span id="net-dot" class="dot"></span>
-          <span id="net-status">Carregando sistema multiplayer...</span>
+            <div class="section-title">PERSONALIZAÇÃO</div>
+
+            <div class="custom-grid">
+              <label>CASACO
+                <select id="coat">
+                  <option value="7f121a">Carmesim</option>
+                  <option value="20242d" selected>Meia-noite</option>
+                  <option value="4b4d52">Cinza</option>
+                  <option value="314537">Floresta</option>
+                  <option value="67513f">Couro</option>
+                </select>
+              </label>
+
+              <label>DETALHE
+                <select id="accent">
+                  <option value="e61b26" selected>Vermelho</option>
+                  <option value="2fa8d2">Azul</option>
+                  <option value="d59b2b">Dourado</option>
+                  <option value="8f57c7">Roxo</option>
+                  <option value="5fc777">Verde</option>
+                </select>
+              </label>
+
+              <label>CHAPÉU
+                <select id="hat">
+                  <option value="wide" selected>Caçador</option>
+                  <option value="hood">Capuz</option>
+                  <option value="cap">Boné</option>
+                  <option value="none">Sem chapéu</option>
+                </select>
+              </label>
+
+              <label>ARMA INICIAL
+                <select id="weapon">
+                  <option value="revolver" selected>Revólver</option>
+                  <option value="shotgun">Escopeta</option>
+                  <option value="rifle">Rifle</option>
+                  <option value="handcannon">Canhão de mão</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="preview-card">
+              <div id="preview-hunter" class="preview-hunter" aria-label="Prévia do caçador">
+                <span class="preview-shadow"></span>
+                <span class="preview-leg left"></span>
+                <span class="preview-leg right"></span>
+                <span class="preview-body"></span>
+                <span class="preview-arm left"></span>
+                <span class="preview-arm right"></span>
+                <span class="preview-head"></span>
+                <span class="preview-hat brim"></span>
+                <span class="preview-hat crown"></span>
+                <span class="preview-band"></span>
+                <span class="preview-gun"></span>
+              </div>
+              <div class="preview-info">
+                <strong id="preview-weapon">REVÓLVER</strong>
+                <span id="preview-stats">equilibrado · 6 tiros · recarga rápida</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="section-title">JOGAR</div>
+
+            <div class="actions">
+              <button id="create" type="button">CRIAR SALA</button>
+
+              <div class="join-row">
+                <input id="code" maxlength="5" placeholder="CÓDIGO" autocomplete="off" aria-label="Código da sala" />
+                <button id="join" type="button">ENTRAR</button>
+              </div>
+
+              <button id="solo" class="secondary" type="button">TREINAR SOZINHO</button>
+            </div>
+
+            <p id="lobby-msg" class="msg">Crie uma sala e envie o código para seu amigo.</p>
+
+            <div class="feature-list">
+              <span>4 armas com cadência e alcance diferentes</span>
+              <span>Upgrades na armaria e clínica</span>
+              <span>Capangas + alvo de recompensa</span>
+              <span>Cosméticos sincronizados no multiplayer</span>
+            </div>
+
+            <div class="status-row">
+              <span id="net-dot" class="dot"></span>
+              <span id="net-status">Carregando sistema multiplayer...</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -58,13 +139,17 @@
       </div>
 
       <div class="hud-right">
+        <div class="weapon-line">
+          <strong id="weapon-name">REVÓLVER</strong>
+          <span id="ammo">6 / 6</span>
+        </div>
         <span id="money">$0</span>
         <button id="copy-code" type="button">COPIAR CÓDIGO</button>
       </div>
     </div>
 
     <div id="controls" class="controls hidden">
-      WASD mover · Mouse mirar/atirar · ESPAÇO golpe · SHIFT esquiva · E interagir
+      WASD mover · Mouse atirar · 1–4 trocar arma · R recarregar · ESPAÇO golpe · SHIFT esquiva · E interagir
     </div>
 
     <div id="toast" class="toast" aria-live="polite"></div>
