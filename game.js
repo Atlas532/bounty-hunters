@@ -634,7 +634,7 @@
 
       this.add([
         this.shadow, this.legL, this.legR, this.coatBack, this.coat, this.belt,
-        this.armL, this.armR, this.head, this.hat, this.hatTop, this.mask, this.gun, this.muzzle
+        this.armL, this.armR, this.head, this.hat, this.hatTop, this.faceBand, this.gun, this.muzzle
       ]);
       this.setDepth(10);
     }
@@ -649,7 +649,7 @@
       this.coat.y = moving ? Math.abs(Math.sin(this.walkPhase * 9)) * -2 : 1;
       this.coatBack.rotation = -sway * .05;
       this.gun.rotation = angle;
-      this.mask.alpha = this.downed ? .25 : 1;
+      this.faceBand.alpha = this.downed ? .25 : 1;
       this.alpha = this.downed ? .43 : 1;
       this.setScale(dash ? 1.08 : 1);
       if (attacking) this.armL.rotation = Math.sin(this.walkPhase * 35) * .95;
