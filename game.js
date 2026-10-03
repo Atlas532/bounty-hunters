@@ -628,7 +628,7 @@
       this.head = scene.add.circle(0, -28, 12, 0xc99b79).setStrokeStyle(2, 0x090909);
       this.hat = scene.add.rectangle(0, -39, 34, 7, 0x111318);
       this.hatTop = scene.add.rectangle(0, -45, 22, 12, 0x17191e);
-      this.mask = scene.add.rectangle(0, -25, 22, 6, accent, .86);
+      this.faceBand = scene.add.rectangle(0, -25, 22, 6, accent, .86);
       this.gun = scene.add.rectangle(25, 0, 24, 5, 0xd7d8da).setOrigin(.05, .5);
       this.muzzle = scene.add.circle(47, 0, 4, 0xffd7a0, 0);
 
