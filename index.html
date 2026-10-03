@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#050506" />
+  <title>Bounty Hunters</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main id="game-wrap">
+    <div id="game" aria-label="Bounty Hunters"></div>
+
+    <section id="lobby" class="overlay">
+      <div class="panel">
+        <img src="./assets/logo.jpg" class="logo" alt="Logo Bounty Hunters" />
+        <p class="eyebrow">MULTIPLAYER · 2 CAÇADORES</p>
+        <h1>BOUNTY HUNTERS</h1>
+        <p class="sub">Pegue contratos, cace alvos e capture-os com seu parceiro.</p>
+
+        <label>SEU NOME
+          <input id="name" maxlength="18" placeholder="Caçador" autocomplete="off" />
+        </label>
+
+        <div class="actions">
+          <button id="create" type="button">CRIAR SALA</button>
+
+          <div class="join-row">
+            <input id="code" maxlength="5" placeholder="CÓDIGO" autocomplete="off" aria-label="Código da sala" />
+            <button id="join" type="button">ENTRAR</button>
+          </div>
+
+          <button id="solo" class="secondary" type="button">TREINAR SOZINHO</button>
+        </div>
+
+        <p id="lobby-msg" class="msg">Crie uma sala e envie o código para seu amigo.</p>
+
+        <div class="status-row">
+          <span id="net-dot" class="dot"></span>
+          <span id="net-status">Carregando sistema multiplayer...</span>
+        </div>
+      </div>
+    </section>
+
+    <div id="hud" class="hud hidden">
+      <div class="hud-left">
+        <strong id="contract">SEM CONTRATO</strong>
+        <span id="objective">Vá até o quadro de recompensas.</span>
+        <div class="hp-wrap" aria-label="Vida">
+          <span>HP</span><div class="hp-track"><div id="hp-bar" class="hp-bar"></div></div>
+        </div>
+      </div>
+
+      <div class="hud-center">
+        <span>SALA</span>
+        <strong id="room-code">SOLO</strong>
+        <small id="peer-state">aguardando parceiro</small>
+      </div>
+
+      <div class="hud-right">
+        <span id="money">$0</span>
+        <button id="copy-code" type="button">COPIAR CÓDIGO</button>
+      </div>
+    </div>
+
+    <div id="controls" class="controls hidden">
+      WASD mover · Mouse mirar/atirar · ESPAÇO golpe · SHIFT esquiva · E interagir
+    </div>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <div id="fatal" class="fatal hidden">
+      <div class="fatal-card">
+        <h2>Não foi possível carregar o jogo</h2>
+        <p id="fatal-text"></p>
+        <button id="reload" type="button">RECARREGAR</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.5/dist/peerjs.min.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>
